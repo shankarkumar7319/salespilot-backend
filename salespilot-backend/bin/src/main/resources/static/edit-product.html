@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Edit Product</title>
+<link rel="stylesheet" href="/css/edit-product.css" />
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <h2>Edit Product</h2>
+	<div class="user-info">
+		<span id="welcomeText"></span>
+		<button id="themeToggle">🌙</button>
+		<a class="btn-back" href="/all-products-admin.html">← Back</a>
+	</div>
+  </div>
+
+  <div class="card">
+
+    <!-- IMAGE PREVIEW -->
+    <img id="previewImg" class="preview"
+         src="https://via.placeholder.com/300" />
+
+    <!-- FORM -->
+    <form id="editProductForm">
+
+      <input type="text" id="name" placeholder="Product Name" required />
+      <input type="text" id="description" placeholder="Description" required />
+      <input type="number" id="price" placeholder="Price" required />
+      <input type="number" id="stock" placeholder="Stock" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="text" id="imageUrl" placeholder="Image URL" />
+
+      <button type="submit">Update Product</button>
+
+      <p id="message"></p>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="/js/admin-products.js"></script>
+<script src="/js/toggle.js"></script>
+
+<script>
+/* LIVE IMAGE PREVIEW */
+	document.getElementById("imageUrl").addEventListener("input", function () {
+ 	document.getElementById("previewImg").src =
+    	this.value || "https://via.placeholder.com/300";
+	});
+</script>
+
+</body>
+</html>

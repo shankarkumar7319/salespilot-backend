@@ -1,0 +1,347 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== THEME VARIABLES ===== */
+/* LIGHT MODE = DEFAULT */
+:root {
+  --bg-main: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-soft: #e5e7eb;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+
+  --accent: #16a34a;
+  --danger: #dc2626;
+
+  --text-main: #111827;
+  --text-sub: #4b5563;
+
+  --border: #e5e7eb;
+}
+
+/* DARK MODE (ONLY WHEN CLASS EXISTS) */
+body.dark-mode {
+  --bg-main: #0b0f19;
+  --bg-card: #020617;
+  --bg-soft: #111827;
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+
+  --accent: #22c55e;
+  --danger: #ef4444;
+
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+
+  --border: #1e293b;
+}
+
+
+
+/* ===== BODY ===== */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text-sub);
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  display: flex;
+}
+
+/* LEFT */
+.left {
+  flex: 1;
+  display: flex;
+  background-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 60px 50px;
+  border-radius: 24px;
+
+  background: var(--card-bg);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  min-height: 483px;
+
+  /* smooth but no hover animation */
+  transition: none;
+  transform: none;
+}
+
+/* REMOVE hover completely */
+.container:hover {
+  transform: none;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+}
+
+/* TOGGLE */
+#themeToggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-main);
+}
+
+/* TEXT */
+.container h1 {
+  margin-bottom: 10px;
+}
+
+.container p {
+  margin-bottom: 25px;
+  color: var(--text-sub);
+}
+
+/* BUTTONS */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 60px;
+}
+
+#loginForm {
+   display: flex;
+  flex-direction: column;
+}
+
+
+#signupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#adminloginForm {
+	display: flex;
+	flex-direction: column;
+}
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+/* SIGN UP (Primary Action) */
+.primary {
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+}
+
+/* CUSTOMER LOGIN */
+.customer {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+}
+
+/* ADMIN LOGIN */
+.admin {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+}
+
+/* HOVER EFFECT (for all) */
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* PRIMARY */
+.primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+/* REGISTER BUTTON */
+.register {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  margin-top: 10px;
+}
+
+.login {
+   background: linear-gradient(135deg, #f59e0b, #d97706);
+   margin-top: 10px;
+ }
+
+.adminlogin {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  margin-top: 10px;
+  }
+
+/* BACK BUTTON (same feel, different color) */
+.back {
+    background: linear-gradient(135deg, #314869, #4b6281);
+}
+
+/* Hover effect (same for both) */
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* SIGN UP (Primary Action) */
+input {
+  width: 100%;
+  padding: 10px 16px;
+  margin: 10px 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  background: #1e293b;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect (important UX) */
+input:focus {
+  border: 1px solid #7c5cff;
+  box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.15);
+  transform: translateY(-2px);
+}
+:root input {
+  background: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* HOVER EFFECT (for all) */
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--nav-bg);
+  color: var(--text-sub);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .main {
+    flex-direction: column;
+  }
+
+  .left {
+    height: 30vh;
+  }
+
+  .right {
+    height: 70vh;
+  }
+
+  /* HAMBURGER */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: var(--card-bg);
+    flex-direction: column;
+    padding: 15px;
+    display: none;
+    border-radius: 10px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+
+/* This is end of home page or index page*/

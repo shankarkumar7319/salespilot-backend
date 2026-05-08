@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Orders</title>
+  <link rel="stylesheet" href="/css/style2.css" />
+  <link rel="stylesheet" href="/css/orders.css" />
+    
+</head>
+<body>
+  
+	<div class="app">
+
+	  <!-- SIDEBAR -->
+	  <aside class="sidebar">
+	    <h2 class="logo">🚀 SalesPilot</h2>
+
+		<div class="nav-item" onclick="startShopping()">🛍 Start Shop</div>
+		<div class="nav-item" onclick="goToCart()">🛒 View Cart</div>
+		<div class="nav-item active" onclick="goToOrders()">📦 Orders</div>
+		<div class="nav-item" onclick="goToTransactions()">💳 Transactions</div>
+	  </aside>
+
+	  <!-- MAIN -->
+	  <div class="main">
+
+	    <!-- TOPBAR -->
+	    <div class="topbar">
+	      <h1>My Orders</h1>
+
+	      <div class="user-info">
+			<button id="themeToggle">🌙</button>
+	        <button class="btn-logout" onclick="goBack()">Back</button>
+	      </div>
+	    </div>
+
+        <div id="ordersContainer" class="orders"></div>
+
+	  </div>
+	</div>
+
+   <script src="/js/orders.js"></script>
+   <script src="/js/toggle.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* =========================
+   TABLE CARD
+========================= */
+.table-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--bg-soft);
+}
+
+th {
+  text-align: left;
+  padding: 16px;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background: var(--bg-soft);
+}
+
+/* =========================
+   USER INFO
+========================= */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.btn-back {
+  background: var(--primary);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  .table-card {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  th, td {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+}

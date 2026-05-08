@@ -1,0 +1,380 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg-main: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-soft: #f1f5f9;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+
+  --accent: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --text-main: #111827;
+  --text-sub: #6b7280;
+
+  --border: #e5e7eb;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --bg-main: #0b0f19;
+  --bg-card: #020617;
+  --bg-soft: #111827;
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+
+  --accent: #22c55e;
+  --warning: #fbbf24;
+  --danger: #ef4444;
+
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+
+  --border: #1e293b;
+}
+
+/* ===== BODY ===== */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+/* ===== LAYOUT ===== */
+.app {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: var(--bg-card);
+  padding: 20px;
+  border-right: 1px solid var(--border);
+}
+
+.logo {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background: var(--bg-soft);
+}
+
+.nav-item.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* ===== ORDERS CONTAINER ===== */
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== ORDER CARD ===== */
+.order-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: 0.3s;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* HEADER */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-header h3 {
+  font-size: 18px;
+}
+
+/* ===== STATUS BADGE ===== */
+.status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* SUCCESS */
+.status.PAID {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--accent);
+}
+
+/* PENDING */
+.status.PENDING {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+
+/* FAILED */
+.status.FAILED {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* ===== ITEMS ===== */
+.items-container {
+  border-top: 1px solid var(--border);
+}
+
+/* ITEM ROW */
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: 0.3s;
+}
+
+.item-row:hover {
+  background: var(--bg-soft);
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+/* IMAGE FIX */
+.item-row img {
+  width: 75px;
+  height: 75px;
+  min-width: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  padding: 5px;
+}
+
+/* DETAILS */
+.item-details {
+  flex: 1;
+}
+
+.item-details h4 {
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.item-details p {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* PRICE */
+.item-price {
+  font-weight: 600;
+}
+
+/* ===== FOOTER ===== */
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.order-footer span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.order-footer button {
+  background: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+.order-footer button:hover {
+  background: var(--primary);
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+body.dark-mode .order-card {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .item-row:hover {
+  background: #1e293b;
+}
+
+body.dark-mode .order-footer button {
+  background: var(--primary);
+}
+
+/* ===== MOBILE (<= 768px) ===== */
+@media (max-width: 768px) {
+
+  /* APP LAYOUT */
+  .app {
+    flex-direction: column;
+  }
+
+  /* SIDEBAR → TOP NAV */
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: none; /* hide logo to save space */
+  }
+
+  .nav-item {
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .nav-item.active {
+	height: auto;
+  }
+
+  /* MAIN */
+  .main {
+    padding: 15px;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .topbar h1 {
+    font-size: 20px;
+  }
+
+  .user-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .user-info button {
+    flex: 1;
+  }
+
+}
+
+
+/* ===== SMALL MOBILE (<= 480px) ===== */
+@media (max-width: 480px) {
+
+  .main {
+    padding: 10px;
+  }
+
+  .topbar h1 {
+    font-size: 18px;
+  }
+
+  .nav-item {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  button {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .order-card {
+    padding: 12px;
+  }
+
+  .item-details h4 {
+    font-size: 14px;
+  }
+
+  .item-details p {
+    font-size: 12px;
+  }
+
+}

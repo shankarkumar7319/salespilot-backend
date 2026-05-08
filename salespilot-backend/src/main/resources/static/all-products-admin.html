@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Products - Admin</title>
+  
+  <link rel="stylesheet" href="/css/style2.css" />
+  <link rel="stylesheet" href="/css/all-products.css" />
+
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo">⚙️ Admin Panel</div>
+
+    <div class="nav-item" onclick="location.href='admin-home.html'">🏠 Dashboard</div>
+    <div class="nav-item" onclick="location.href='add-product.html'">➕ Add Product</div>
+    <div class="nav-item active">📦 All Products</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <h1>All Products</h1>
+
+	  
+	  <div class="user-info">
+	    <button id="themeToggle">🌙</button>
+	    <button class="btn-back" onclick="window.location.href='/admin-home.html'">← Back</button>
+	  </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-card">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="productList">
+          <!-- JS will inject rows here -->
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/js/toggle.js"></script>
+
+<script src="/js/admin-products.js"></script>
+
+</body>
+</html>

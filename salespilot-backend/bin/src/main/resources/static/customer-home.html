@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/css/style2.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">🚀 SalesPilot</h2>
+
+        <div class="nav-item active" onclick="startShopping()">🛍 Start Shop</div>
+        <div class="nav-item" onclick="goToCart()">🛒 View Cart</div>
+
+        <!-- ✅ NEW -->
+        <div class="nav-item" onclick="goToOrders()">📦 Orders</div>
+        <div class="nav-item" onclick="goToTransactions()">💳 Transactions</div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <h1>Customer Dashboard</h1>
+
+            <div class="user-info">
+                <span id="welcomeText"></span>
+                <button id="themeToggle">🌙</button>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div>
+                <h2>Welcome back 👋</h2>
+                <p>Explore your personalized shopping experience</p>
+            </div>
+            <button class="btn-primary" onclick="startShopping()">Start Shopping</button>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div id="shoppingSection" class="products">
+            <h2>Available Products</h2><br>
+            <div id="productList" class="product-grid"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/toggle.js"></script>
+<script src="/js/customer.js"></script>
+
+</body>
+</html>

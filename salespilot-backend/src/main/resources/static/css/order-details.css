@@ -1,0 +1,389 @@
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* REMOVE HORIZONTAL SCROLL */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg-main: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-soft: #f1f5f9;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+
+  --accent: #22c55e;
+  --danger: #ef4444;
+
+  --text-main: #111827;
+  --text-sub: #6b7280;
+
+  --border: #e5e7eb;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --bg-main: #0b0f19;
+  --bg-card: #020617;
+  --bg-soft: #111827;
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+
+  --accent: #22c55e;
+  --danger: #ef4444;
+
+  --text-main: #e5e7eb;
+  --text-sub: #9ca3af;
+
+  --border: #1e293b;
+}
+
+/* BODY */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+/* ===== LAYOUT ===== */
+.app {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: var(--bg-card);
+  padding: 20px;
+  border-right: 1px solid var(--border);
+}
+
+.logo {
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background: var(--bg-soft);
+}
+
+.nav-item.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+button {
+  background: linear-gradient(135deg, var(--primary), #6366f1);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* SUMMARY */
+.summary {
+  background: var(--bg-card);
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.summary span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 10px;
+  position: relative;
+  flex-wrap: wrap; /* FIX for items */
+}
+
+/* LINE */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 5%;
+  width: 90%;
+  height: 5px;
+  background: var(--border);
+  border-radius: 10px;
+}
+
+/* PROGRESS */
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 5%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  width: 0%;
+  animation: progressFill 2s ease forwards;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress); }
+}
+
+/* STEPS */
+.step {
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
+
+.circle {
+  width: 42px;
+  height: 42px;
+  background: #d1d5db;
+  border-radius: 50%;
+  margin: auto;
+  border: 4px solid white;
+  transition: 0.4s;
+}
+
+.step.active .circle {
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+  transform: scale(1.2);
+}
+
+.step p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ===== ITEMS FIX ===== */
+.timeline .items {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ITEM CARD */
+.item-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* IMAGE FIX */
+.item-img {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  padding: 6px;
+}
+
+/* TEXT */
+.item-card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-card h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.item-card p {
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* DARK MODE SHADOW FIX */
+body.dark-mode .item-card {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .summary {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ORDERS RESPONSIVE FIX */
+@media (max-width: 768px) {
+
+  .orders {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .order-card {
+    padding: 15px;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-row img {
+    width: 100%;
+    height: 140px;
+  }
+
+  .order-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .order-footer button {
+    width: 100%;
+  }
+
+}
+
+/* ============================= */
+/* 📱 MOBILE (≤ 768px) */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* SUMMARY STACK */
+  .summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* TIMELINE → VERTICAL */
+  .timeline {
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  /* REMOVE HORIZONTAL LINE */
+  .timeline::before,
+  .timeline::after {
+    display: none;
+  }
+
+  /* STEP ALIGN LEFT */
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .circle {
+    margin: 0;
+  }
+
+  /* ITEMS STACK */
+  .item-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* IMAGE FULL WIDTH */
+  .item-img {
+    width: 100%;
+    height: 150px;
+  }
+
+}
+
+
+/* ============================= */
+/* 📲 SMALL MOBILE (≤ 480px) */
+/* ============================= */
+@media (max-width: 480px) {
+
+  .summary p {
+    font-size: 13px;
+  }
+
+  .step p {
+    font-size: 12px;
+  }
+
+  .item-card h4 {
+    font-size: 14px;
+  }
+
+  .item-card p {
+    font-size: 12px;
+  }
+
+}

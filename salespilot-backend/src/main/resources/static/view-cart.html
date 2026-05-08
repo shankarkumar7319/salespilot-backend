@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Cart</title>
+  <link rel="stylesheet" href="/css/style2.css" />
+</head>
+<body>
+  
+	<div class="app">
+
+	  <!-- SIDEBAR -->
+	  <aside class="sidebar">
+	    <h2 class="logo">🚀 SalesPilot</h2>
+
+		<div class="nav-item" onclick="startShopping()">🛍 Start Shop</div>
+		<div class="nav-item active" onclick="goToCart()">🛒 View Cart</div>
+		<div class="nav-item" onclick="goToOrders()">📦 Orders</div>
+		<div class="nav-item" onclick="goToTransactions()">💳 Transactions</div>
+	  </aside>
+
+	  <!-- MAIN -->
+	  <div class="main">
+
+	    <!-- TOPBAR -->
+	    <div class="topbar">
+	      <h1>My Cart</h1>
+
+	      <div class="user-info">
+	        <span id="welcomeText"></span>
+			<button id="themeToggle">🌙</button>
+	        <button class="btn-logout" onclick="goBack()">Back</button>
+	      </div>
+	    </div>
+
+	    <!-- CART ITEMS -->
+	    <div id="cartList" class="product-grid"></div>
+
+	    <!-- TOTAL -->
+	    <div class="cart-footer">
+	      <h2 id="cartTotal"></h2>
+	      <button id="checkoutBtn" onclick="checkout()">Proceed to Buy</button>
+	    </div>
+
+	  </div>
+	</div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+ 
+   <script src="/js/customer.js"></script>
+  <script src="/js/toggle.js"></script>
+  
+</body>
+</html>

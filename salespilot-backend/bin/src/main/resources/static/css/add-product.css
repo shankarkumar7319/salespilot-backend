@@ -1,0 +1,145 @@
+/* =========================
+   WRAPPER
+========================= */
+.add-product-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.product-form-card {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product-form-card h2 {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.product-form-card input,
+.product-form-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.product-form-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.product-form-card input:focus,
+.product-form-card textarea:focus {
+  border-color: var(--primary);
+}
+
+/* =========================
+   ROW (2 INPUTS)
+========================= */
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row input {
+  flex: 1;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.product-form-card button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-form-card button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+#message {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* =========================
+   📱 MOBILE (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* Wrapper spacing */
+  .add-product-wrapper {
+    margin-top: 10px;
+  }
+
+  /* Form full width */
+  .product-form-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  /* Stack inputs */
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Adjust heading */
+  .product-form-card h2 {
+    font-size: 18px;
+  }
+
+  /* Button full width */
+  .product-form-card button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   📲 SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .product-form-card {
+    padding: 15px;
+  }
+
+  .product-form-card input,
+  .product-form-card textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .product-form-card button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

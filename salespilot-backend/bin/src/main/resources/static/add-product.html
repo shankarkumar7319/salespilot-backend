@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Product</title>
+  <link rel="stylesheet" href="/css/style2.css" />
+  <link rel="stylesheet" href="/css/add-product.css" />
+    
+</head>
+<body>
+
+	<div class="app">
+
+	  <!-- SIDEBAR -->
+	  <aside class="sidebar">
+	    <h2 class="logo">⚙️ Admin Panel</h2>
+
+	    <div class="nav-item" onclick="window.location.href='/admin-home.html'">🏠 Dashboard</div>
+	    <div class="nav-item active">➕ Add Product</div>
+	    <div class="nav-item" onclick="window.location.href='/all-products-admin.html'">📦 All Products</div>
+	  </aside>
+
+	  <!-- MAIN -->
+	  <div class="main">
+
+	    <div class="topbar">
+	      <h1>Add New Product</h1>
+	  
+		<div class="user-info">
+		        <span id="welcomeText"></span>
+		        <button id="themeToggle">🌙</button>
+		        <button class="btn-logout" onclick="logout()">Logout</button>
+		 </div>
+		 </div>
+	    <div class="add-product-wrapper">
+
+	      <form id="addProductForm" class="product-form-card">
+
+	        <h2>Product Details</h2>
+
+	        <input type="text" id="name" placeholder="Product Name" required />
+
+	        <textarea id="description" placeholder="Product Description" required></textarea>
+
+	        <div class="row">
+	          <input type="number" id="price" placeholder="Price" required />
+	          <input type="number" id="stock" placeholder="Stock" required />
+	        </div>
+
+	        <div class="row">
+	          <input type="text" id="category" placeholder="Category" required />
+	          <input type="text" id="imageUrl" placeholder="Image URL" />
+	        </div>
+
+	        <button type="submit">➕ Add Product</button>
+
+	        <p id="message"></p>
+
+	      </form>
+
+	    </div>
+
+	  </div>
+	</div>
+
+      <p id="message"></p>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/admin-products.js"></script>
+<script src="/js/toggle.js"></script>
+</body>
+</html>
